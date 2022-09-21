@@ -7,9 +7,9 @@ module.exports = function validateInput(data) {
     errors.err = "Password must be string!";
   }
 
-  if (typeof data.role !== "string") {
-    errors.err = "Invalid role!";
-  }
+  // if (typeof data.role !== "string") {
+  //   errors.err = "Invalid role!";
+  // }
   if (typeof data.name !== "string") {
     errors.err = "Name must be string!";
   }

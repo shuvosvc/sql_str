@@ -11,21 +11,21 @@ const validateUpdate = require("../validations/authority/update");
 
 const router = express.Router();
 
-// router.post(
-//   "/create",
-//   requireAuth,
-//   validateMiddleware(validateRegister),
-//   authControllers.create
-// );
+router.post(
+  "/create",
+  requireAuth,
+  validateMiddleware(validateRegister),
+  authControllers.create
+);
 
-// router.put(
-//   "/update/:_id",
-//   requireAuth,
-//   validateMiddleware(validateUpdate),
-//   authControllers.update
-// );
+router.put(
+  "/update/:id",
+  requireAuth,
+  validateMiddleware(validateUpdate),
+  authControllers.update
+);
 
-// router.delete("/delete/:_id", requireAuth, authControllers.delete);
+router.delete("/delete/:id", requireAuth, authControllers.delete);
 
 router.post("/login", validateMiddleware(validateLogin), authControllers.login);
 

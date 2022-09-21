@@ -6,7 +6,7 @@ require("dotenv").config();
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.bulkInsert(
-      "authority",
+      "Authorities",
       [
         {
           id: 1,
@@ -27,6 +27,6 @@ module.exports = {
 
   // down: async (queryInterface, Sequelize) => {
 
-  //   await queryInterface.bulkDelete("authority", null, bulkDeleteOptions);
+  //   await queryInterface.bulkDelete("Authorities", null, bulkDeleteOptions);
   // },
 };

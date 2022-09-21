@@ -1,11 +1,11 @@
-const Authority = require("../models/authority");
+const Authorities = require("../models/Authorities");
 const Company = require("../models/company");
 
 const isObjId = require("../util/isObjId");
 
 exports.createCompany = async function (req, res) {
   try {
-    const isAdmin = await Authority.findOne({ email: req.user.email });
+    const isAdmin = await Authorities.findOne({ email: req.user.email });
 
     if (!isAdmin) {
       return res.status(404).json({
@@ -45,7 +45,7 @@ exports.updateCompany = async function (req, res) {
       });
     }
 
-    const isAdmin = await Authority.findOne({ email: req.user.email });
+    const isAdmin = await Authorities.findOne({ email: req.user.email });
 
     if (!isAdmin) {
       return res.status(404).json({
@@ -86,7 +86,7 @@ exports.updateCompany = async function (req, res) {
 };
 exports.getAllCommpany = async function (req, res) {
   try {
-    const isAdmin = await Authority.findOne({ email: req.user.email });
+    const isAdmin = await Authorities.findOne({ email: req.user.email });
 
     if (!isAdmin) {
       return res.status(404).json({
